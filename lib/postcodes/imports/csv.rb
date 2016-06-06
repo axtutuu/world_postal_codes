@@ -28,9 +28,7 @@ module Postcodes
             prefecture:      NKF.nkf('-S -w', row[6]),
             prefecture_kana: NKF.nkf('-S -w', row[3]),
             city:            NKF.nkf('-S -w', row[7]),
-            city_kana:       NKF.nkf('-S -w', row[4]),
-            town:            NKF.nkf('-S -w', row[8]),
-            town_kana:       NKF.nkf('-S -w', row[5])
+            city_kana:       NKF.nkf('-S -w', row[4])
           }
         end
 
