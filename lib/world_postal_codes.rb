@@ -5,7 +5,7 @@ require "yaml"
 module WorldPostalCodes
   DATA_DIR = File.dirname(__FILE__) + '/../data/japan.yml'
   ZIP_URL = "http://www.post.japanpost.jp/zipcode/dl/kogaki/zip/ken_all.zip"
-  include WorldPostalCodes::Identify
+  extend WorldPostalCodes::Identify
 
   # class << self
   #   def identify(code)
