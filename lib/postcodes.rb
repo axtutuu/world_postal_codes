@@ -1,24 +1,10 @@
-require "postcodes/version"
+require "postcodes/identify"
 require "pry"
 require "yaml"
 
 module Postcodes
   DATA_DIR = File.dirname(__FILE__) + '/../data/japan.yml'
-
-  class << self
-    def identify(code)
-      db[code] || {}
-    end
-
-    def db
-      @db ||= begin
-        YAML.load(File.open(DATA_DIR))
-      end
-    end
-
-    def load
-      db
-    end
-  end
+  ZIP_URL = "http://www.post.japanpost.jp/zipcode/dl/kogaki/zip/ken_all.zip"
+  include Postcodes::Identify
 end
 require 'postcodes/railtie' if defined?(Rails)

@@ -6,12 +6,11 @@ require 'yaml'
 
 module Postcodes
   module Import
-    ZIP_URL = "http://www.post.japanpost.jp/zipcode/dl/kogaki/zip/ken_all.zip"
     class << self
 
       def run!
         postcodes = []
-        Zip::File.open(open(ZIP_URL).path) do |zip|
+        Zip::File.open(open(Postcodes::ZIP_URL).path) do |zip|
           file = zip.glob('*.CSV').first
           CSV.parse(file.get_input_stream.read, encoding: "UTF-8") do |row|
             postcodes << convert(row)
