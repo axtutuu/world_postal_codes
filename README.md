@@ -1,4 +1,4 @@
-# WorldPostalCodes
+# WorldPostalCodes [![Gem Version](https://badge.fury.io/rb/world_postal_codes.svg)](https://badge.fury.io/rb/world_postal_codes)
 
 Simmple gemt to get city, state for given zip code. supported country is below
 
