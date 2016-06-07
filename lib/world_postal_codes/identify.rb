@@ -3,6 +3,9 @@ require "yaml"
 module WorldPostalCodes
   module Identify
     def jp(code)
+      code = code.tr('０-９', '0-9')
+      code = code.gsub(/-|ー/, "")
+
       db[code] || {}
     end
 

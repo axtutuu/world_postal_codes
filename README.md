@@ -23,7 +23,7 @@ Or install it yourself as:
 ## Usage
 
 ```
-WorldPostalCodes.jp("00000-")
+WorldPostalCodes.jp("00000")
 # => {:prefecture=>"神奈川県", :prefecture_kana=>"カナガワケン", :city=>"相模原市南区", :city_kana=>"サガミハラシミナミク"}
 ```
 

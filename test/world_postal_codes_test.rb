@@ -19,4 +19,13 @@ class WorldPostalCodesTest < Minitest::Test
 
     assert_equal address[:prefecture], nil
   end
+
+  def test_identify_postal_code_with_hyphen
+    address = WorldPostalCodes.jp("901-3106")
+
+    assert_equal address[:prefecture], "沖縄県"
+    assert_equal address[:prefecture_kana], "オキナワケン"
+    assert_equal address[:city], "島尻郡久米島町"
+    assert_equal address[:city_kana], "シマジリグンクメジマチョウ"
+  end
 end
