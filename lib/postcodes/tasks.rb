@@ -1,8 +1,8 @@
-require "postcodes/imports/csv"
+require "postcodes/import"
 
 namespace :postcodes do
   desc "download csv"
   task :import do
-    Postcodes::Imports::Csv.download
+    Postcodes::Import.run!
   end
 end
