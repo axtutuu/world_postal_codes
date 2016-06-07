@@ -1,12 +1,12 @@
 require 'test_helper'
 
-class PostcodesTest < Minitest::Test
+class WorldPostalCodesTest < Minitest::Test
   def test_that_it_has_a_version_number
-    refute_nil ::Postcodes::VERSION
+    refute_nil ::WorldPostalCodes::VERSION
   end
 
   def test_identify_zip_code
-    address = Postcodes.identify("9013106")
+    address = WorldPostalCodes.jp("9013106")
 
     assert_equal address[:prefecture], "沖縄県"
     assert_equal address[:prefecture_kana], "オキナワケン"
@@ -15,7 +15,7 @@ class PostcodesTest < Minitest::Test
   end
 
   def test_not_found_code
-    address = Postcodes.identify("0")
+    address = WorldPostalCodes.jp("0")
 
     assert_equal address[:prefecture], nil
   end

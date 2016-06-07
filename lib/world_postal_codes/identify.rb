@@ -1,6 +1,6 @@
 require "yaml"
 
-module Postcodes
+module WorldPostalCodes
   module Identify
     class << self
       def identify(code)
@@ -18,4 +18,5 @@ module Postcodes
       end
     end
   end
+
 end

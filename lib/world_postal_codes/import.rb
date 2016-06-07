@@ -4,19 +4,19 @@ require "csv"
 require 'nkf'
 require 'yaml'
 
-module Postcodes
+module WorldPostalCodes
   module Import
     class << self
 
       def run!
-        postcodes = []
-        Zip::File.open(open(Postcodes::ZIP_URL).path) do |zip|
+        postal_codes = []
+        Zip::File.open(open(WorldPostalCodes::ZIP_URL).path) do |zip|
           file = zip.glob('*.CSV').first
           CSV.parse(file.get_input_stream.read, encoding: "UTF-8") do |row|
-            postcodes << convert(row)
+            postal_codes << convert(row)
           end
         end
-        write(postcodes.to_h)
+        write(postal_codes.to_h)
       end
 
       private
@@ -32,9 +32,9 @@ module Postcodes
         ]
       end
 
-      def write(postcodes)
-        File.open(Postcodes::DATA_DIR, "wb") do |file|
-         file.write postcodes.to_yaml
+      def write(postal_codes)
+        File.open(WorldPostalCodes::DATA_DIR, "wb") do |file|
+         file.write postal_codes.to_yaml
         end
       end
 

@@ -1,15 +1,15 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'postcodes/version'
+require 'world_postal_codes/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "postcodes"
-  spec.version       = Postcodes::VERSION
+  spec.name          = "world_postal_codes"
+  spec.version       = WorldPostalCodes::VERSION
   spec.authors       = ["kawasaki-atsushi"]
   spec.email         = ["kawasaki8910@gmail.com"]
 
-  spec.summary       = %s(Simple gem to get city for a given Japan post codes.)
+  spec.summary       = %s(Simple gem to get city for a given Japan postal codes.)
   spec.description   = %s(Gem to identify zip codes inside Japan)
   spec.homepage      = "TODO: Put your gem's website or public repo URL here."
   spec.license       = "MIT"
