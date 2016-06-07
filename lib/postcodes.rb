@@ -7,7 +7,7 @@ module Postcodes
 
   class << self
     def identify(code)
-      db[code]
+      db[code] || {}
     end
 
     def db
