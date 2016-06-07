@@ -22,7 +22,6 @@ module Postcodes
 
       private
       def convert(row)
-        binding.pry
         [
           row[2].to_s,
           {
